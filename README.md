@@ -52,19 +52,3 @@ services:
 ```
 
 将上面的内容保存为 `docker-compose.yml` 之后，执行 `docker compose up -d`，稍等片刻，在浏览器访问启动服务的 IP 地址和对应端口，比如：`http://localhost:7860`，就能够正常使用啦。
-
-![支持太乙模型的 Stable Diffusion Web 控制台](assets/web-console.jpg)
-
-模型运行起来，当然是要玩一把了，我使用博客首页的古诗“醉里不知天在水，满船清梦压星河”为主题，尝试生成了一张图，看起来效果还不错：
-
-![干净透明、详尽的构建日志](assets/generate.jpg)
-
-想要快速上手中文 Stable Diffusion 模型的同学，看到这里就可以啦。
-
-如果你想了解如何从零开始配置 GPU 云服务器环境，或者想了解这个 Stable Diffusion 容器运行环境是如何构建的，可以继续阅读[这篇文章](https://soulteary.com/2022/12/09/use-docker-to-quickly-get-started-with-the-chinese-stable-diffusion-model-taiyi.html)。
-
-## 相关项目
-
-- [“封神榜”模型](https://github.com/IDEA-CCNL/Fengshenbang-LM)
-- [“太乙”的 Web UI](https://github.com/IDEA-CCNL/stable-diffusion-webui)
-- [Huggingface 项目页面](https://huggingface.co/IDEA-CCNL/Taiyi-Stable-Diffusion-1B-Chinese-v0.1)
