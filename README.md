@@ -1,8 +1,4 @@
-# Docker Stable Diffusion Taiyi
 
-为中文 Stable Diffusion Taiyi(太乙) 准备的容器运行环境，内置 Web UI，干净透明，开箱即用。
-
-![](assets/preview.jpg)
 
 ## 快速上手
 
