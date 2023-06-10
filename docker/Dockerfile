@@ -23,10 +23,8 @@ RUN python launch.py --exit --xformers --skip-torch-cuda-test
 
 # 下载常用的 negative prompt
 RUN git clone https://huggingface.co/embed/negative embeddings/negative 
-# 下载 anything-v5.0 模型
-RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ckpt/anything-v5.0/resolve/main/AnythingV5V3_v5PrtRE.safetensors -d models/Stable-diffusion -o AnythingV5V3_v5PrtRE.safetensors
 # 图库浏览器
 RUN git clone https://github.com/AlUlkesh/stable-diffusion-webui-images-browser extensions/stable-diffusion-webui-images-browser
 RUN pip cache purge
 
-CMD ["python", "launch.py", "--listen", "--api", "--xformers"]
+CMD ["python", "launch.py", "--listen", "--api", "--xformers", "--disable-safe-unpickle"]
