@@ -17,10 +17,9 @@ RUN git clone -b v2.3 "https://github.com/camenduru/stable-diffusion-webui" && \
 WORKDIR stable-diffusion-webui
 
 RUN pip install -q torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118 -U --no-cache-dir
-RUN pip install -q xformers==0.0.18 -U --no-cache-dir
 
 # 完成其他依赖的安装
-RUN python launch.py --exit --skip-torch-cuda-test
+RUN python launch.py --exit --xformers --skip-torch-cuda-test
 
 # 下载常用的 negative prompt
 RUN git clone https://huggingface.co/embed/negative embeddings/negative 
