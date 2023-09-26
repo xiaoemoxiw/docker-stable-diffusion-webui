@@ -11,7 +11,7 @@ RUN apt-get update && \
     rm -f Miniconda3-latest-Linux-x86_64.sh
 RUN git lfs install
 # 下载stable-diffusion-webui本体
-RUN git clone -b v2.3 "https://github.com/camenduru/stable-diffusion-webui" && \
+RUN git clone -b v2.6 "https://github.com/camenduru/stable-diffusion-webui" && \
     cd "stable-diffusion-webui" && \
     rm -rf .git
 WORKDIR stable-diffusion-webui
@@ -24,7 +24,9 @@ RUN python launch.py --exit --xformers --skip-torch-cuda-test
 # 下载常用的 negative prompt
 RUN git lfs clone https://huggingface.co/embed/negative embeddings/negative 
 # 图库浏览器
-RUN git clone https://github.com/AlUlkesh/stable-diffusion-webui-images-browser extensions/stable-diffusion-webui-images-browser
+RUN git clone https://github.com/zanllp/sd-webui-infinite-image-browsing extensions/sd-webui-infinite-image-browsing
+RUN git clone https://github.com/DominikDoom/a1111-sd-webui-tagcomplete extensions/a1111-sd-webui-tagcomplete
+RUN git clone https://github.com/Mikubill/sd-webui-controlnet extensions/sd-webui-controlnet
 RUN pip cache purge
 
 CMD ["python", "launch.py", "--listen", "--api", "--xformers", "--disable-safe-unpickle"]
